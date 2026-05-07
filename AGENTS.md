@@ -27,3 +27,5 @@
 ## Personal Notes
 - When experimenting locally, use a small input file (5-10 queries) to avoid hammering Google
 - The `-depth` flag is useful for limiting result pages during development/testing
+- Prefer `-lang en` during local runs so output is consistent and easier to read/debug
+- Keep a `testdata/` scratch folder for sample input files; don't commit real query lists
