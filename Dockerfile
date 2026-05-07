@@ -40,7 +40,8 @@ FROM debian:bookworm-slim
 ENV PLAYWRIGHT_BROWSERS_PATH=/opt/browsers
 ENV PLAYWRIGHT_DRIVER_PATH=/opt
 # Run as non-root user for better security
-RUN useradd -m -u 1001 scraper
+# Using UID 1001 to avoid conflicts with common system users
+RUN useradd -m -u 1001 -s /bin/bash scraper
 
 # Install only the necessary dependencies in a single layer
 # Note: libglib2.0-0 added to fix missing dependency warning on some systems
