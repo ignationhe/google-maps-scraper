@@ -43,8 +43,10 @@ ENV PLAYWRIGHT_DRIVER_PATH=/opt
 RUN useradd -m -u 1001 scraper
 
 # Install only the necessary dependencies in a single layer
+# Note: libglib2.0-0 added to fix missing dependency warning on some systems
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates \
+    libglib2.0-0 \
     libnss3 \
     libnspr4 \
     libatk1.0-0 \
