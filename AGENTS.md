@@ -7,6 +7,7 @@
 - `make vet` - Run go vet static analysis
 - `make format` - Format code with gofmt
 - `go test ./path/to/package` - Run tests for a specific package
+- `go test -run TestFunctionName ./path/to/package` - Run a single specific test
 
 ## Code Style Guidelines
 - Use `gofmt` for formatting (spaces, not tabs)
@@ -22,3 +23,7 @@
 - Add godoc comments for exported types and functions
 - Use `nolint` comments sparingly with explanations
 - Avoid magic numbers, use named constants or comment them
+
+## Personal Notes
+- When experimenting locally, use a small input file (5-10 queries) to avoid hammering Google
+- The `-depth` flag is useful for limiting result pages during development/testing
