@@ -29,3 +29,5 @@
 - The `-depth` flag is useful for limiting result pages during development/testing
 - Prefer `-lang en` during local runs so output is consistent and easier to read/debug
 - Keep a `testdata/` scratch folder for sample input files; don't commit real query lists
+- Use `-concurrency 2` during local dev to keep CPU/network usage low and logs readable
+- If a run gets rate-limited, wait ~10 minutes before retrying; increasing `-depth` makes it worse
