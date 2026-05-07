@@ -31,3 +31,5 @@
 - Keep a `testdata/` scratch folder for sample input files; don't commit real query lists
 - Use `-concurrency 2` during local dev to keep CPU/network usage low and logs readable
 - If a run gets rate-limited, wait ~10 minutes before retrying; increasing `-depth` makes it worse
+- Useful one-liner for a quick smoke test: `go run . -input testdata/sample.txt -depth 1 -lang en -concurrency 1`
+- Output JSON can be pretty-printed for inspection with: `cat results.json | python3 -m json.tool | less`
