@@ -33,3 +33,5 @@
 - If a run gets rate-limited, wait ~10 minutes before retrying; increasing `-depth` makes it worse
 - Useful one-liner for a quick smoke test: `go run . -input testdata/sample.txt -depth 1 -lang en -concurrency 1`
 - Output JSON can be pretty-printed for inspection with: `cat results.json | python3 -m json.tool | less`
+- Use `-exit-on-inactivity 3m` to avoid hanging runs when Google stops returning results silently
+- Pipe output to a timestamped file during longer runs: `go run . ... > results_$(date +%Y%m%d_%H%M%S).json`
