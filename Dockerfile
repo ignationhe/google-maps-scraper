@@ -46,6 +46,7 @@ RUN useradd -m -u 1001 -s /bin/bash scraper
 # Install only the necessary dependencies in a single layer
 # Note: libglib2.0-0 added to fix missing dependency warning on some systems
 # Note: libxshmfence1 added to fix occasional shared memory fence errors with Chromium
+# Note: libvulkan1 added to suppress Vulkan driver warnings from Chromium on startup
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates \
     libglib2.0-0 \
@@ -69,6 +70,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libcairo2 \
     libasound2 \
     libxshmfence1 \
+    libvulkan1 \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
