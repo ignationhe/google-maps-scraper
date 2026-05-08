@@ -45,6 +45,7 @@ RUN useradd -m -u 1001 -s /bin/bash scraper
 
 # Install only the necessary dependencies in a single layer
 # Note: libglib2.0-0 added to fix missing dependency warning on some systems
+# Note: libxshmfence1 added to fix occasional shared memory fence errors with Chromium
 RUN apt-get update && apt-get install -y --no-install-recommends \
     ca-certificates \
     libglib2.0-0 \
@@ -67,6 +68,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libpango-1.0-0 \
     libcairo2 \
     libasound2 \
+    libxshmfence1 \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
